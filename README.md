@@ -17,12 +17,12 @@
 <uses-permission android:name="android.permission.INTERNET" />
 
 <li>POINTLINK에서 Publisher에게 제공되는 offercode 등록 (Publish 구분 고유값)</li>
-<li><application> ~ </application>사이에 넣어주세요.</li>
+<li>application ~ /application사이에 넣어주세요.</li>
 <meta-data android:name="offercode" android:value="제공되는 offercode" />
 
 <li>Google Play Services 적용</li> 
 <li>광고의 참여 시 광고주와 매칭을 위해 Google Advertising ID는 필수 항목입니다.</li>
-<li><application> ~ </application>사이에 넣어주세요.</li>
+<li>application ~ /application사이에 넣어주세요.</li>
 <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version" />
 
 <li>POINTLINK 오퍼월 페이지 적용</li>
