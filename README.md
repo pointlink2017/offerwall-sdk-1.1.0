@@ -14,19 +14,26 @@
 
 # 3. Menifest 설정
 <li>권한 설정하기</li>
-<pre><span><</span>uses-permission android:name="android.permission.INTERNET" /></pre>
+<pre><span><</span>uses-permission 
+    android:name="android.permission.INTERNET" /></pre>
 
 <li>POINTLINK에서 Publisher에게 제공되는 offercode 등록 (Publish 구분 고유값)</li>
 <li><span><</span>application> ~ <span><</span>/application>사이에 넣어주세요.</li>
-<pre><span><</span>meta-data android:name="offercode" android:value="제공되는 offercode" /></pre>
+<pre><span><</span>meta-data 
+    android:name="offercode" 
+    android:value="제공되는 offercode" /></pre>
 
 <li>Google Play Services 적용</li> 
 <li>광고의 참여 시 광고주와 매칭을 위해 Google Advertising ID는 필수 항목입니다.</li>
 <li><span><</span>application> ~ <span><</span>/application>사이에 넣어주세요.</li>
-<pre><span><</span>meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version" /></pre>
+<pre><span><</span>meta-data 
+    android:name="com.google.android.gms.version" 
+    android:value="@integer/google_play_services_version" /></pre>
 
 <li>POINTLINK 오퍼월 페이지 적용</li>
-<pre><span><</span>activity android:name="kr.co.pointlink.offerwall" android:configChanges="orientation|keyboardHidden|screenSize" /></pre>
+<pre><span><</span>activity 
+    android:name="kr.co.pointlink.offerwall" 
+    android:configChanges="orientation|keyboardHidden|screenSize" /></pre>
 
 # 4. build.gradle(:app) 설정
 <li>Google Advertising ID 사용을 위해 Firebase를 적용해 주십시오.</li>
