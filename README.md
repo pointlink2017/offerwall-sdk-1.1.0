@@ -2,7 +2,8 @@
 <li>POINTLINK OFFERWALL SDK Version 1.1.0</li>
 <li>Android SDK 포인트링크를 통한 오퍼월 연동을 위한 가이드 입니다.</li>
 <li>SDK는 OFFERWALL의 실행하기 위한 기본 프로세스만 가지고 있을 뿐입니다.</li>
-<li>POINTLINK OFFEWALL은 WEBVIEW로 구성되어 있으며, Publisher에서 자체적인 WEBVIEW로도 구성이 가능합니다. (별도 협의 필요)</li>
+<li>POINTLINK OFFEWALL은 WEBVIEW로 구성되어 있으며, Publisher에서 자체적인 WEBVIEW로도 구성이 가능합니다.</li>
+(<a href="https://github.com/pointlink2017/offerwall-sdk-1.1.0">POINTLINK OFFEWALL WEBVIEW 1.1.0</a>)
 
 # 1. Library 등록
 <li>Project의 libs 폴더에 SDK 등록.</li>
