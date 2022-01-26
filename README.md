@@ -2,7 +2,7 @@
 <li>POINTLINK OFFERWALL SDK Version 1.1.0</li>
 <li>Android SDK 포인트링크를 통한 오퍼월 연동을 위한 가이드 입니다.</li>
 <li>SDK는 OFFERWALL의 실행하기 위한 기본 프로세스만 가지고 있을 뿐입니다.</li>
-(<a href="https://github.com/pointlink2017/offerwall-sdk-1.1.0/tree/main/kr.co.pointlink.sample/app/libs">POINTLINK OFFEWALL WEBVIEW 1.1.0</a>)
+(<a href="https://github.com/pointlink2017/offerwall-sdk-1.1.0/tree/main/kr.co.pointlink.sample/app/libs">POINTLINK OFFEWALL SDK 1.1.0 다운로드 받기</a>)
 
 
 # 1. Library 등록
