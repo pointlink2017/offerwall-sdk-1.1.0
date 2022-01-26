@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">kr.co.pointlink.sample</string>
+    <string name="app_btn1">OPEN OFFERWALL</string>
+    <string name="app_btn2">CLOSE OFFERWALL</string>
+</resources>
