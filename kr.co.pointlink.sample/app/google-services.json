@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "775911656058",
+    "project_id": "kr-co-pointlink-sample",
+    "storage_bucket": "kr-co-pointlink-sample.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:775911656058:android:0a33ee4549edf8fde8c9c3",
+        "android_client_info": {
+          "package_name": "kr.co.pointlink.sample"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "775911656058-d2ds026n9a02aco2nhdqnl528002m85h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB0s-8iCHqP2GrCNXUbuIgO4SGuC5G4bj8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "775911656058-d2ds026n9a02aco2nhdqnl528002m85h.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
