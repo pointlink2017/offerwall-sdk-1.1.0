@@ -2,27 +2,23 @@
 <li>POINTLINK OFFERWALL SDK Version 1.1.0</li>
 <li>Android SDK 포인트링크를 통한 오퍼월 연동을 위한 가이드 입니다.</li>
 <li>SDK는 OFFERWALL의 실행하기 위한 기본 프로세스만 가지고 있을 뿐입니다.</li>
-<li>POINTLINK OFFEWALL은 WEBVIEW로 구성되어 있으며, Publisher에서 자체적인 WEBVIEW로도 구성이 가능합니다.</li>
 (<a href="https://github.com/pointlink2017/offerwall-sdk-1.1.0">POINTLINK OFFEWALL WEBVIEW 1.1.0</a>)
+
 
 # 1. Library 등록
 <li>Project의 libs 폴더에 SDK 등록.</li>
+
 
 # 2. proguard 설정
 <li>proguard를 통한 난독화 시 POINTLINK SDK는 이미 난독화 처리 되어 있으므로 제외 처리.</li>
 <pre>-keep class kr.co.pointlink.sdk.** { *; }
 -dontwarn kr.co.pointlink.sdk.**</pre>
 
+
 # 3. Menifest 설정
 <li>권한 설정하기</li>
 <pre><span><</span>uses-permission 
     android:name="android.permission.INTERNET" /></pre>
-
-<li>POINTLINK에서 Publisher에게 제공되는 offercode 등록 (Publish 구분 고유값)</li>
-<li><span><</span>application> ~ <span><</span>/application>사이에 넣어주세요.</li>
-<pre><span><</span>meta-data 
-    android:name="offercode" 
-    android:value="제공되는 offercode" /></pre>
 
 <li>Google Play Services 적용</li> 
 <li>광고의 참여 시 광고주와 매칭을 위해 Google Advertising ID는 필수 항목입니다.</li>
@@ -36,7 +32,8 @@
     android:name="kr.co.pointlink.offerwall" 
     android:configChanges="orientation|keyboardHidden|screenSize" /></pre>
 
-# 4. build.gradle(:app) 설정
+
+**# 4. build.gradle(:app) 설정**
 <li>Google Advertising ID 사용을 위해 Firebase를 적용해 주십시오.</li>
 <li>설치형(CPI) 광고 자동 실적 체크를 위해 Install Referrer API를 적용해 주십시오.</li>
 <pre>dependencies {
