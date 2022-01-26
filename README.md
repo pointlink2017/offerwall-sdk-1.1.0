@@ -33,7 +33,7 @@
     android:configChanges="orientation|keyboardHidden|screenSize" /></pre>
 
 
-**# 4. build.gradle(:app) 설정**
+# 4. build.gradle(:app) 설정
 <li>Google Advertising ID 사용을 위해 Firebase를 적용해 주십시오.</li>
 <li>설치형(CPI) 광고 자동 실적 체크를 위해 Install Referrer API를 적용해 주십시오.</li>
 <pre>dependencies {
@@ -48,6 +48,7 @@
 }
 apply plugin: 'com.google.gms.google-services'</pre>
 
+
 # 5. build.gradle(:Publisher의 packageName) 설정
 <pre>buildscript {
     repositories {
@@ -59,6 +60,7 @@ apply plugin: 'com.google.gms.google-services'</pre>
         classpath "com.google.gms:google-services:4.3.10"
     }
 }</pre>
+
 
 # 6. Offerwall호출
 <li>userkey (Publisher가 User에게 Reward 지급을 위한 고유 식별 값) 설정</li>
