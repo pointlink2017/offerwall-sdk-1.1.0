@@ -9,16 +9,26 @@
 <li>Project의 libs 폴더에 SDK(kr.co.pointlink.sdk-ver1.1.0.aar) 등록.</li>
 <pre><a href="https://github.com/pointlink2017/offerwall-sdk-1.1.0/tree/main/kr.co.pointlink.sample/app/libs">POINTLINK OFFEWALL SDK 1.1.0 다운로드 받기</a></pre>
 
+
 # 2. proguard 설정
 <li>proguard를 통한 난독화 시 POINTLINK SDK는 이미 난독화 처리 되어 있으므로 제외 처리.</li>
 <pre>-keep class kr.co.pointlink.sdk.** { *; }
 -dontwarn kr.co.pointlink.sdk.**</pre>
+
 
 # 3. Menifest 설정
 <li>권한 설정하기</li>
 <li>인터넷 사용은 필수 사항입니다.</li>
 <pre><span><</span>uses-permission 
     android:name="android.permission.INTERNET" /></pre>
+    
+<li>CPI광고 참여를 위한 quries 적용</li>
+(Google 정책에 따라 "QUERY_ALL_PACKAGES" 퍼미션 사용불가)
+<pre><span><</span>queries>
+    <span><</span>intent>
+        <span><</span>action android:name="android.intent.action.MAIN" />
+    <span><</span>/intent>
+<span><</span>/queries></pre>    
 
 <li>Google Play Services 적용</li> 
 <li>광고의 참여 시 광고주와 매칭을 위해 Google Advertising ID는 필수 항목입니다.</li>
@@ -33,6 +43,7 @@
     android:configChanges="orientation|keyboardHidden|screenSize"
     tools:replace="android:configChanges"
     android:exported="true" /></pre>
+
 
 # 4. build.gradle(:app) 설정
 <pre>plugins {
@@ -171,11 +182,6 @@ Publisher 등록을 위해 필요사항을 전달하고 puCode를 받습니다.
 userPoint는 puPrice에서 Publisher의 수익을 제외한 비율에서 Publisher의 포인트 비율에 맞춰 표기 됨.
 ex) 1원 = 10포인트, puPirce의 90%를 User에게 지급 시 
 puPrice = 100이라면, userPoint = 100 x 90% x 10포인트 = 900</pre>
-
-<li>CPI Call 연동</li>
-<pre>CPI(=Cost Per Install)광고는 
-User가 APP설치 광고를 참여하여 APP을 설치 했을때 Publisher에서 체크하여 Reward Postback을 요청하게 됩니다.
-</pre>
 
 
 # 8. 미리보기
