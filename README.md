@@ -3,7 +3,6 @@
 <li>Android SDK 포인트링크를 통한 오퍼월 연동을 위한 가이드 입니다.</li>
 <li>SDK는 OFFERWALL의 실행하기 위한 기본 프로세스만 가지고 있습니다.</li>
 <li>SDK는 aar파일로 구성되어 있습니다.</li>
-(<a href="https://github.com/pointlink2017/offerwall-sdk-1.1.0/tree/main/kr.co.pointlink.sample/app/libs">POINTLINK OFFEWALL SDK 1.1.0 다운로드 받기</a>)
 
 
 # 1. 포인트링크 연동
@@ -40,7 +39,7 @@ User가 APP설치 광고를 참여하여 APP을 설치 했을때 Publisher에서
 
 # 2. Library 등록
 <li>Project의 libs 폴더에 SDK(kr.co.pointlink.sdk-ver1.1.0.aar) 등록.</li>
-
+<pre><a href="https://github.com/pointlink2017/offerwall-sdk-1.1.0/tree/main/kr.co.pointlink.sample/app/libs">POINTLINK OFFEWALL SDK 1.1.0 다운로드 받기</a></pre>
 
 # 3. proguard 설정
 <li>proguard를 통한 난독화 시 POINTLINK SDK는 이미 난독화 처리 되어 있으므로 제외 처리.</li>
