@@ -50,11 +50,9 @@
 <pre>plugins {
     id 'com.android.application'
 }
-
 android {
 ..
 }
-
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.aar'])
     implementation 'androidx.appcompat:appcompat:1.4.1'
@@ -70,14 +68,12 @@ dependencies {
     implementation 'com.google.firebase:firebase-core'
     implementation 'com.google.firebase:firebase-analytics'
 }
-
 apply plugin: 'com.google.gms.google-services'</pre>
 
 
 # 5. build.gradle(:Publisher의 packageName) 설정
 <li>각 APP의 상태에 맞춰 지정해 주세요.</li>
-<pre>// Top-level build file where you can add configuration options common to all sub-projects/modules.
-buildscript {
+<pre>buildscript {
     repositories {
         google()
         mavenCentral()
@@ -85,12 +81,8 @@ buildscript {
     dependencies {
         classpath 'com.android.tools.build:gradle:7.1.0'
         classpath 'com.google.gms:google-services:4.3.10'
-
-        // NOTE: Do not place your application dependencies here; they belong
-        // in the individual module build.gradle files
     }
 }
-
 task clean(type: Delete) {
     delete rootProject.buildDir
 }</pre>
@@ -109,21 +101,17 @@ task clean(type: Delete) {
     private String adCode;
     private String puCode;
     private String screenMode;
-
     private String paddingTOP;
     private String paddingLEFT;
     private String paddingRIGHT;
     private String paddingBOTTOM;
-    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN); // FULLSCREEN
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_BLUR_BEHIND, WindowManager.LayoutParams.FLAG_BLUR_BEHIND); // BLUR BEHIND
         getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT)); // TRANSPARENT BACKGROUND WHITE
-
         userKey = "honggildong"; // 필수 값
         puCode = "10002"; // 고정 필수 값
         adCode = ""; 
@@ -132,8 +120,6 @@ task clean(type: Delete) {
         paddingLEFT = "0";
         paddingRIGHT = "0";
         paddingBOTTOM = "0";
-
-        // SDK + CALL
         Button OfferBtn = findViewById(R.id.OfferBtn);
         OfferBtn.setOnClickListener(v -> {
             Intent intent = new Intent(MainActivity.this, kr.co.pointlink.sdk.PLOfferwall.class);
