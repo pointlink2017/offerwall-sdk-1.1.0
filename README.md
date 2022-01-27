@@ -3,6 +3,7 @@
 <li>Android SDK 포인트링크를 통한 오퍼월 연동을 위한 가이드 입니다.</li>
 <li>SDK는 OFFERWALL의 실행하기 위한 기본 프로세스만 가지고 있습니다.</li>
 <li>SDK는 aar파일로 구성되어 있습니다.</li>
+<pre><a href="https://github.com/pointlink2017/offerwall-sdk-1.1.0/tree/main/kr.co.pointlink.sample">POINTLINK OFFERWALL 적용 SAMPLE APP</a></pre>
 
 
 # 1. Library 등록
