@@ -5,52 +5,18 @@
 <li>SDK는 aar파일로 구성되어 있습니다.</li>
 
 
-# 1. 포인트링크 연동
-<li>SDK 연동 전 포인트링크와 Server to Server 연동 작업이 필요 합니다.</li>
-<li>Publisher 등록</li>
-<pre>사전 협의를 통해서 진행됩니다.
-포인트링크 연락처(pointlink@kakao.com)를 통해 사전 협의해 주세요.
-Publisher 등록을 위해 필요사항을 전달하고 puCode를 받습니다.
-1) 회사명 + 사업자번호 + 사업자등로증사본 + 통장사본
-2) 담당자명 + 담당자 Email주소 + Publisher명</pre>
-
-<li>Reward Postback 연동</li>
-<pre>Postback은 User가 광고 참여 완료 즉시 curl을 통해서 Server to Server로 전송됩니다.
-(일부 광고에 따라서는 실시간이 아닐 수 있습니다.)
-<table>
-<tr><td>전송받을 Host</td><td colspan="2">전송할 Host 주소 (ex, pointlink.co.kr)</td></tr>
-<tr><td>전송받을 Path</td><td colspan="2">전송할 Path 주소 (ex, /postback)</td></tr>
-<tr><td>Port</td><td colspan="2">전송할 Port 주소 (ex, 80)</td></tr>
-<tr><td>전송방식</td><td colspan="2">POST (되도록 POST 전송이나 GET 방식도 가능)</td></tr>
-<tr><td>Parameter1</td><td>adCode</td><td>Offerwall 참여한 광고의 고유 값</td></tr>
-<tr><td>Parameter1</td><td>puPrice</td><td>Offerwall 참여한 광고를 통해 Publisher가 받을 금액(vat 별도)</td></tr>
-<tr><td>Parameter1</td><td>userPoint</td><td>Offerwall 참여한 광고를 통해 User가 받을 포인트</td></tr>
-<tr><td>Parameter2</td><td>userkey</td><td>Publisher의 User 정보</td></tr>
-</table>
-- puPrice는 Publisher에서 받을 금액(원, vat별도) 
-- userPoint는 User에게 전달되는 포인트
-userPoint는 puPrice에서 Publisher의 수익을 제외한 비율에서 Publisher의 포인트 비율에 맞춰 표기 됨.
-ex) 1원 = 10포인트, puPirce의 90%를 User에게 지급 시 
-puPrice = 100이라면, userPoint = 100 x 90% x 10포인트 = 900</pre>
-
-<li>CPI Call 연동</li>
-<pre>CPI(=Cost Per Install)광고는 
-User가 APP설치 광고를 참여하여 APP을 설치 했을때 Publisher에서 체크하여 Reward Postback을 요청하게 됩니다.
-</pre>
-
-
-# 2. Library 등록
+# 1. Library 등록
 <li>Project의 libs 폴더에 SDK(kr.co.pointlink.sdk-ver1.1.0.aar) 등록.</li>
 <pre><a href="https://github.com/pointlink2017/offerwall-sdk-1.1.0/tree/main/kr.co.pointlink.sample/app/libs">POINTLINK OFFEWALL SDK 1.1.0 다운로드 받기</a></pre>
 
-# 3. proguard 설정
+# 2. proguard 설정
 <li>proguard를 통한 난독화 시 POINTLINK SDK는 이미 난독화 처리 되어 있으므로 제외 처리.</li>
 <pre>-keep class kr.co.pointlink.sdk.** { *; }
 -dontwarn kr.co.pointlink.sdk.**</pre>
 
-
-# 4. Menifest 설정
+# 3. Menifest 설정
 <li>권한 설정하기</li>
+<li>인터넷 사용은 필수 사항입니다.</li>
 <pre><span><</span>uses-permission 
     android:name="android.permission.INTERNET" /></pre>
 
@@ -68,7 +34,7 @@ User가 APP설치 광고를 참여하여 APP을 설치 했을때 Publisher에서
     tools:replace="android:configChanges"
     android:exported="true" /></pre>
 
-# 5. build.gradle(:app) 설정
+# 4. build.gradle(:app) 설정
 <pre>plugins {
     id 'com.android.application'
 }
@@ -96,7 +62,8 @@ dependencies {
 apply plugin: 'com.google.gms.google-services'</pre>
 
 
-# 6. build.gradle(:Publisher의 packageName) 설정
+# 5. build.gradle(:Publisher의 packageName) 설정
+<li>각 APP의 상태에 맞춰 지정해 주세요.</li>
 <pre>// Top-level build file where you can add configuration options common to all sub-projects/modules.
 buildscript {
     repositories {
@@ -117,7 +84,7 @@ task clean(type: Delete) {
 }</pre>
 
 
-# 7. Offerwall호출
+# 6. Offerwall호출
 <li>userkey (Publisher가 User에게 Reward 지급을 위한 고유 식별 값) 설정</li>
 <li>중복참여를 제한함으로써 어뷰징을 방지.</li>
 <li>CS발생 시 대상자를 확인하고 광고 참여 여부를 판별하기 위한 연결 값.</li>
@@ -145,9 +112,9 @@ task clean(type: Delete) {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_BLUR_BEHIND, WindowManager.LayoutParams.FLAG_BLUR_BEHIND); // BLUR BEHIND
         getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT)); // TRANSPARENT BACKGROUND WHITE
 
-        userKey = "honggildong";
-        puCode = "10002";
-        adCode = "";
+        userKey = "honggildong"; // 필수 값
+        puCode = "10002"; // 고정 필수 값
+        adCode = ""; 
         screenMode = ""; // full or null
         paddingTOP = "100";
         paddingLEFT = "0";
@@ -171,6 +138,44 @@ task clean(type: Delete) {
         });
     }
 }</pre>
+
+
+# 7. 포인트링크 연동
+<li>SDK 연동 전 포인트링크와 Server to Server 연동 작업이 필요 합니다.</li>
+<li>Publisher 등록</li>
+<pre>사전 협의를 통해서 진행됩니다.
+포인트링크 연락처(pointlink@kakao.com)를 통해 사전 협의해 주세요.
+Publisher 등록을 위해 필요사항을 전달하고 puCode를 받습니다.
+1) 회사명 + 사업자번호 + 사업자등로증사본 + 통장사본
+2) 담당자명 + 담당자 Email주소 + Publisher명</pre>
+
+<li>Reward Postback 연동</li>
+<pre>Postback은 User가 광고 참여 완료 즉시 curl을 통해서 Server to Server로 전송됩니다.
+(일부 광고에 따라서는 실시간이 아닐 수 있습니다.)
+<table>
+<tr><td colspan="2"><strong>구분</strong></td><td><strong>설명</strong></td></tr>
+<tr><td colspan="2">전송받을 Host</td><td>전송할 Host 주소 (ex, pointlink.co.kr)</td></tr>
+<tr><td colspan="2">전송받을 Path</td><td>전송할 Path 주소 (ex, /postback)</td></tr>
+<tr><td colspan="2">Port</td><td>전송할 Port 주소 (ex, 80)</td></tr>
+<tr><td colspan="2">전송방식</td><td>POST (되도록 POST 전송이나 GET 방식도 가능)</td></tr>
+<tr><td>Parameter1</td><td>adCode</td><td>Offerwall 참여한 광고의 고유 값</td></tr>
+<tr><td>Parameter2</td><td>puPrice</td><td>Offerwall 참여한 광고를 통해 Publisher가 받을 금액(vat 별도)</td></tr>
+<tr><td>Parameter3</td><td>userPoint</td><td>Publisher가 User에게 제공하는 포인트
+(연동 진행 시 User에게 지급되는 비율이 적용되어 비율에 따라 제공됩니다.)</td></tr>
+<tr><td>Parameter4</td><td>userkey</td><td>Publisher의 User 정보 (8번에서 설정한 값)</td></tr>
+<tr><td>Parameter5</td><td>adTitle</td><td>참여한 광고의 제목 (base64_encode)</td></tr>
+<tr><td>Parameter5</td><td>기타</td><td>협의하여 추가할 수 있음.</td></tr>
+</table>
+- puPrice는 Publisher에서 받을 금액(원, vat별도) 
+- userPoint는 User에게 전달되는 포인트
+userPoint는 puPrice에서 Publisher의 수익을 제외한 비율에서 Publisher의 포인트 비율에 맞춰 표기 됨.
+ex) 1원 = 10포인트, puPirce의 90%를 User에게 지급 시 
+puPrice = 100이라면, userPoint = 100 x 90% x 10포인트 = 900</pre>
+
+<li>CPI Call 연동</li>
+<pre>CPI(=Cost Per Install)광고는 
+User가 APP설치 광고를 참여하여 APP을 설치 했을때 Publisher에서 체크하여 Reward Postback을 요청하게 됩니다.
+</pre>
 
 
 # 8. 미리보기
