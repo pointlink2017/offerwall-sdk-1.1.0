@@ -15,14 +15,16 @@ Publisher 등록을 위해 필요사항을 전달하고 puCode를 받습니다.
 2) 담당자명 + 담당자 Email주소 + Publisher명</pre>
 
 <li>Reward Postback 연동</li>
-<pre>Postback은 curl을 통해서 Server to Server로 전송됩니다.
+<pre>Postback은 User가 광고 참여 완료 즉시 curl을 통해서 Server to Server로 전송됩니다.
+(일부 광고에 따라서는 실시간이 아닐 수 있습니다.)
 <table>
-<tr><td>Host</td><td colspan="2">전송할 Host 주소 (ex, pointlink.co.kr)</td></tr>
-<tr><td>Path</td><td colspan="2">전송할 Path 주소 (ex, /postback)</td></tr>
+<tr><td>전송받을 Host</td><td colspan="2">전송할 Host 주소 (ex, pointlink.co.kr)</td></tr>
+<tr><td>전송받을 Path</td><td colspan="2">전송할 Path 주소 (ex, /postback)</td></tr>
 <tr><td>Port</td><td colspan="2">전송할 Port 주소 (ex, 80)</td></tr>
 <tr><td>전송방식</td><td colspan="2">POST (되도록 POST 전송이나 GET 방식도 가능)</td></tr>
 <tr><td>Parameter1</td><td>adCode</td><td>Offerwall 참여한 광고의 고유 값</td></tr>
-<tr><td>Parameter1</td><td>puPrice</td><td>Offerwall 참여한 광고를 통해 받을 금액(vat 별도)</td></tr>
+<tr><td>Parameter1</td><td>puPrice</td><td>Offerwall 참여한 광고를 통해 Publisher가 받을 금액(vat 별도)</td></tr>
+<tr><td>Parameter1</td><td>userPoint</td><td>Offerwall 참여한 광고를 통해 User가 받을 포인트</td></tr>
 <tr><td>Parameter2</td><td>userkey</td><td>Publisher의 User 정보</td></tr>
 </table>
 - puPrice는 Publisher에서 받을 금액(원, vat별도) 
