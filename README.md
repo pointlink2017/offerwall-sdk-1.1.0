@@ -180,13 +180,13 @@ User가 APP설치 광고를 참여하여 APP을 설치 했을때 Publisher에서
 
 # 8. 미리보기
 <li>Screen Shot - default</li>
-<img src="https://github.com/pointlink2017/offerwall-sdk-1.1.0/blob/main/kr.co.pointlink.sample/screen/screen5_padding0.jpg?raw=true" width="280">
+<table><tr><td><img src="https://github.com/pointlink2017/offerwall-sdk-1.1.0/blob/main/kr.co.pointlink.sample/screen/screen5_padding0.jpg?raw=true" width="280"></td></tr></table>
 
 <li>Screen Shot - full</li>
-<img src="https://github.com/pointlink2017/offerwall-sdk-1.1.0/blob/main/kr.co.pointlink.sample/screen/screen6_full.jpg?raw=true" width="280">
+<table><tr><td><img src="https://github.com/pointlink2017/offerwall-sdk-1.1.0/blob/main/kr.co.pointlink.sample/screen/screen6_full.jpg?raw=true" width="280"></td></tr></table>
 
 <li>Screen Shot - PaddingTop 100</li>
-<img src="https://github.com/pointlink2017/offerwall-sdk-1.1.0/blob/main/kr.co.pointlink.sample/screen/screen2_paddingtop100.jpg?raw=true" width="280">
+<table><tr><td><img src="https://github.com/pointlink2017/offerwall-sdk-1.1.0/blob/main/kr.co.pointlink.sample/screen/screen2_paddingtop100.jpg?raw=true" width="280"></td></tr></table>
 
 <li>Screen Shot - PaddingTop 100 + puCode Error</li>
-<img src="https://github.com/pointlink2017/offerwall-sdk-1.1.0/blob/main/kr.co.pointlink.sample/screen/screen4.jpg?raw=true" width="280">
+<table><tr><td><img src="https://github.com/pointlink2017/offerwall-sdk-1.1.0/blob/main/kr.co.pointlink.sample/screen/screen4.jpg?raw=true" width="280"></td></tr></table>
